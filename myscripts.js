@@ -23,3 +23,15 @@ function showError() {
 
   error.className = "error active";
 }
+
+function showError() {
+  if (zip.validity.typeMismatch) {
+    error.textContent = "Please enter in a proper zip code";
+  } else if (zip.validity.valueMissing) {
+    error.textContent = "The zip code is missing";
+  } else if (zip.validity.tooShort) {
+    error.textContent = "zip is too short";
+  }
+
+  error.className = "error active";
+}
