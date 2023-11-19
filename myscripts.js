@@ -9,6 +9,7 @@ email.addEventListener("input", () => {
     error.className = "error";
   } else {
     showError();
+    showZipError();
   }
 });
 
@@ -24,7 +25,7 @@ function showError() {
   error.className = "error active";
 }
 
-function showError() {
+function showZipError() {
   if (zip.validity.typeMismatch) {
     error.textContent = "Please enter in a proper zip code";
   } else if (zip.validity.valueMissing) {
@@ -32,6 +33,5 @@ function showError() {
   } else if (zip.validity.tooShort) {
     error.textContent = "zip is too short";
   }
-
   error.className = "error active";
 }
