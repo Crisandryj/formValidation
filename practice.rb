@@ -1,14 +1,21 @@
+def adjusted_index(index, offset)
+  ((index.to_i + offset.to_i) % 26) - 1
+end
+
 def caesar_cipher(string, _num)
   arry = string.split('')
-  puts ('a'..'z').to_a
-
-  puts
+  alphabet = ('a'..'z').to_a
+  newString = ''
+  arry.each do |_l|
+    if !alphabet.include?(_l.downcase)
+      newString << _l
+    else
+      orginalIndex = alphabet.index(_l.downcase)
+      newIndex = adjusted_index(orginalIndex, _num)
+      newString << alphabet[newIndex]
+    end
+  end
+  puts newString
 end
 
-# caesar_cipher('gp', 5)
-
-def adjusted_index(index, offset)
-  (index + offset) % 26
-end
-
-puts adjusted_index(25, 2)
+caesar_cipher('What a string!', 6)
