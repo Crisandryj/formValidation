@@ -15,7 +15,7 @@ def caesar_cipher(string, _num)
       newString << alphabet[newIndex]
     end
   end
-  puts newString
+  newString
 end
 
-caesar_cipher('What a string!', 6)
+puts caesar_cipher('What a string!', 6)
