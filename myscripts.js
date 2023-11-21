@@ -12,7 +12,7 @@ email.addEventListener("input", () => {
     showZipError();
   }
 });
-
+//show errors for emails
 function showError() {
   if (email.validity.typeMismatch) {
     error.textContent = "Please enter in a proper email address";
@@ -24,7 +24,7 @@ function showError() {
 
   error.className = "error active";
 }
-
+//show errors for zip
 function showZipError() {
   if (zip.validity.typeMismatch) {
     error.textContent = "Please enter in a proper zip code";
